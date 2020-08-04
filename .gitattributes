@@ -1,0 +1,2 @@
+*.dhall gitlab-language=haskell
+*.webmanifest gitlab-language=json

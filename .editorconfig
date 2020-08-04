@@ -13,5 +13,11 @@ trim_trailing_whitespace = true
 [*.{dhall}]
 indent_size = 4
 
+[*.{json,webmanifest}]
+insert_final_newline = false
+
+[Dockerfile]
+indent_size = 4
+
 [.tool-versions]
 insert_final_newline = false

@@ -1,0 +1,27 @@
+image: registry.gitlab.com/toastal/dhall-webmanifest
+
+stages:
+  - test
+
+test:build:
+  stage: test
+  script: dhall --explain --file ./CSSColor/Color.dhall
+
+test:license-banner:
+  stage: test
+  only:
+    refs:
+      - pushes
+      - merge_requests
+    changes:
+      - "*.dhall"
+      - "Webmanifest/**/*"
+  script: ./test/run-license-banner.sh
+
+badges:
+  stage: .post
+  only:
+    - tags
+  when: delayed
+  start_in: 5 minutes
+  script: ./bin/badges.fish
