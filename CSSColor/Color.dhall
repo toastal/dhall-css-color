@@ -76,29 +76,6 @@ let default
     : Color
     = Color.Named Named.Type.black
 
-let color4To3
-    : Color4 → Optional Color3
-    = λ(color4 : Color4) →
-        merge
-          { Hex = λ(hex_ : Hex.Type) → Some (Color3.Hex hex_)
-          , Named = λ(name : Named.Type) → Some (Color3.Named name)
-          , System = λ(systemColor_ : System.SystemColor4) → None Color3
-          , currentColor =
-              λ(currentColor_ : CurrentColor.Type) →
-                Some (Color3.currentColor currentColor_)
-          , transparent =
-              λ(transparent_ : Transparent.Type) →
-                Some (Color3.transparent transparent_)
-          , RGB = λ(rgb_ : RGB.Type) → Some (Color3.RGB rgb_)
-          , HSL = λ(hsl_ : HSL.Type) → Some (Color3.HSL hsl_)
-          , HWB = λ(hwb_ : HWB.Type) → None Color3
-          , Lab = λ(lab_ : Lab.Type) → None Color3
-          , LCH = λ(lch_ : LCH.Type) → None Color3
-          , Gray = λ(gray_ : Gray.Type) → None Color3
-          , DeviceCMYK = λ(device-cmyk_ : DeviceCMYK.Type) → None Color3
-          }
-          color4
-
 let show3
     : Color3 → Text
     = λ(color : Color3) →
@@ -136,12 +113,19 @@ let show
     = show4
 
 let hex
-    : Natural -> Natural -> Natural -> List Natural → Color
-    = λ(n0 : Natural) →
-      λ(n1 : Natural) →
-      λ(n2 : Natural) →
-      λ(ns : List Natural) →
-    = in Color.Hex (Hex.build n0 n1 n2 ns)
+    : Natural → Natural → Natural → Color
+    = λ(red : Natural) →
+      λ(green : Natural) →
+      λ(blue : Natural) →
+        Color.Hex (Hex.hex red green blue)
+
+let hexa
+    : Natural → Natural → Natural → Natural → Color
+    = λ(red : Natural) →
+      λ(green : Natural) →
+      λ(blue : Natural) →
+      λ(alpha : Natural) →
+        Color.Hex (Hex.hexa red green blue alpha)
 
 let currentColor
     : Color
@@ -275,6 +259,7 @@ in  { Type = Color
     , show4
     , Hex
     , hex
+    , hexa
     , Named
     , System
     , currentColor
