@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 if [ -n "$GLAPT" ]
-  set -l latest_tag_badge_id "92656"
+  set -l latest_tag_badge_id "97740"
 
   set -l latest_tag (string trim (curl --silent --compressed --request GET "https://gitlab.com/api/v4/projects/"$CI_PROJECT_ID"/repository/tags?order_by=name&sort=desc" | jq -Mcr '[.[]  | .name] | map(select(startswith("v"))) | .[0]'))
 
