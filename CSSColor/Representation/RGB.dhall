@@ -5,9 +5,13 @@
   Using the legacy comma syntax in the `show` for better compatibility
   TODO: percentages on red, green, blue
 -}
-let Alpha = ../Unit/alpha-value.dhall
+let Alpha =
+        ../Unit/alpha-value.dhall sha256:bf08e9d80ceeee18606810ae82abff7266d1bb935d91cc9ea615f2490f3f60e5
+      ? ../Unit/alpha-value.dhall
 
-let Alphatize = ../Utils/Alphatize.dhall
+let Alphatize =
+        ../Utils/Alphatize.dhall sha256:0bad82995850661aa0d3c0f21cba23bcce78728f6326345bccf5afe8150951b2
+      ? ../Utils/Alphatize.dhall
 
 let RGB
     : Type
@@ -67,17 +71,25 @@ let rgba
 let example0 = assert : show3 (rgb 10.0 20.0 255.0) ≡ "rgb(10.0, 20.0, 255.0)"
 
 let example1 =
-      assert : show3 (rgba 1.0 255.0 30.0 (Alpha.Number 0.5)) ≡ "rgba(1.0, 255.0, 30.0, 0.5)"
+        assert
+      :   show3 (rgba 1.0 255.0 30.0 (Alpha.Number 0.5))
+        ≡ "rgba(1.0, 255.0, 30.0, 0.5)"
 
 let example2 =
-      assert : show3 (rgba 1.0 255.0 30.0 (Alpha.Percentage 0.5)) ≡ "rgb(1.0, 255.0, 30.0)"
+        assert
+      :   show3 (rgba 1.0 255.0 30.0 (Alpha.Percentage 0.5))
+        ≡ "rgb(1.0, 255.0, 30.0)"
 
 let example3 = assert : show4 (rgb 10.0 20.0 255.0) ≡ "rgb(10.0 20.0 255.0)"
 
 let example4 =
-      assert : show4 (rgba 1.0 255.0 30.0 (Alpha.Number 0.5)) ≡ "rgb(1.0 255.0 30.0 0.5)"
+        assert
+      :   show4 (rgba 1.0 255.0 30.0 (Alpha.Number 0.5))
+        ≡ "rgb(1.0 255.0 30.0 0.5)"
 
 let example5 =
-      assert : show4 (rgba 1.0 255.0 30.0 (Alpha.Percentage 56.7)) ≡ "rgb(1.0 255.0 30.0 56.7%)"
+        assert
+      :   show4 (rgba 1.0 255.0 30.0 (Alpha.Percentage 56.7))
+        ≡ "rgb(1.0 255.0 30.0 56.7%)"
 
 in  { Type = RGB, default, Alpha, show, show3, show4, rgb, rgba }

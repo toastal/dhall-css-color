@@ -317,9 +317,9 @@ let show4
           name
 
 let show
-  : NamedColor → Text
-  = show4
+    : NamedColor → Text
+    = show4
 
-let example0 = assert : show4 (NamedColor.rebeccapurple) ≡ "rebeccapurple"
+let example0 = assert : show4 NamedColor.rebeccapurple ≡ "rebeccapurple"
 
 in  { Type = NamedColor, show, show4 }

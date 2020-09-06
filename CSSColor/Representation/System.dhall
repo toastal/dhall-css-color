@@ -53,6 +53,6 @@ let show
     : SystemColor → Text
     = show4
 
-let example0 = assert : show4 (SystemColor4.Canvas) ≡ "Canvas"
+let example0 = assert : show4 SystemColor4.Canvas ≡ "Canvas"
 
 in  { Type = SystemColor, SystemColor4, show, show4 }

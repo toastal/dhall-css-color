@@ -6,7 +6,7 @@ let Percentage
 
 let show
     : Percentage → Text
-    = λ(percentage : Percentage) → Double/show percentage ++ "%"
+    = λ(percentage : Percentage) → "${Double/show percentage}%"
 
 let example0 = assert : show 100.0 ≡ "100.0%"
 

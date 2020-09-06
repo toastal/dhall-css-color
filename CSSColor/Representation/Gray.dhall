@@ -3,9 +3,13 @@
 {-
   https://www.w3.org/TR/css-color-4/#grays
 -}
-let Alpha = ../Unit/alpha-value.dhall
+let Alpha =
+        ../Unit/alpha-value.dhall sha256:bf08e9d80ceeee18606810ae82abff7266d1bb935d91cc9ea615f2490f3f60e5
+      ? ../Unit/alpha-value.dhall
 
-let Alphatize = ../Utils/Alphatize.dhall
+let Alphatize =
+        ../Utils/Alphatize.dhall sha256:0bad82995850661aa0d3c0f21cba23bcce78728f6326345bccf5afe8150951b2
+      ? ../Utils/Alphatize.dhall
 
 let Gray
     : Type

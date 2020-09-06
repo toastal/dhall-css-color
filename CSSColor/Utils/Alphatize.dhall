@@ -1,24 +1,26 @@
 -- SPDX-License-Identifier: BSD-3-Clause
 -- Copyright © 2020 toastal dhall-css-color
 let compose =
-      https://prelude.dhall-lang.org/v17.1.0/Function/compose.dhall sha256:65ad8bbea530b3d8968785a7cf4a9a7976b67059aa15e3b61fcba600a40ae013
+      https://prelude.dhall-lang.org/v18.0.0/Function/compose.dhall sha256:65ad8bbea530b3d8968785a7cf4a9a7976b67059aa15e3b61fcba600a40ae013
 
 let Optional/concat =
-      https://prelude.dhall-lang.org/v17.1.0/Optional/concat.dhall sha256:b7736bd3ebeab14c3912dfb534d0c970a025b001d06c2d5461d4b0e289e3cb7a
+      https://prelude.dhall-lang.org/v18.0.0/Optional/concat.dhall sha256:b7736bd3ebeab14c3912dfb534d0c970a025b001d06c2d5461d4b0e289e3cb7a
 
 let Optional/map =
-      https://prelude.dhall-lang.org/v17.1.0/Optional/map.dhall sha256:501534192d988218d43261c299cc1d1e0b13d25df388937add784778ab0054fa
+      https://prelude.dhall-lang.org/v18.0.0/Optional/map.dhall sha256:501534192d988218d43261c299cc1d1e0b13d25df388937add784778ab0054fa
 
 let Optional/null =
-      https://prelude.dhall-lang.org/v17.1.0/Optional/null.dhall sha256:3871180b87ecaba8b53fffb2a8b52d3fce98098fab09a6f759358b9e8042eedc
+      https://prelude.dhall-lang.org/v18.0.0/Optional/null.dhall sha256:3871180b87ecaba8b53fffb2a8b52d3fce98098fab09a6f759358b9e8042eedc
 
 let Optional/toList =
-      https://prelude.dhall-lang.org/v17.1.0/Optional/toList.dhall sha256:d78f160c619119ef12389e48a629ce293d69f7624c8d016b7a4767ab400344c4
+      https://prelude.dhall-lang.org/v18.0.0/Optional/toList.dhall sha256:d78f160c619119ef12389e48a629ce293d69f7624c8d016b7a4767ab400344c4
 
 let Text/concatSep =
-      https://prelude.dhall-lang.org/v17.1.0/Text/concatSep.dhall sha256:e4401d69918c61b92a4c0288f7d60a6560ca99726138ed8ebc58dca2cd205e58
+      https://prelude.dhall-lang.org/v18.0.0/Text/concatSep.dhall sha256:e4401d69918c61b92a4c0288f7d60a6560ca99726138ed8ebc58dca2cd205e58
 
-let Alpha = ../Unit/alpha-value.dhall
+let Alpha =
+        ../Unit/alpha-value.dhall sha256:bf08e9d80ceeee18606810ae82abff7266d1bb935d91cc9ea615f2490f3f60e5
+      ? ../Unit/alpha-value.dhall
 
 let Alphatize
     : Type

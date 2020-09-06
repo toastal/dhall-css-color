@@ -3,11 +3,17 @@
 {-
   https://www.w3.org/TR/css-color-4/#cmyk-colors
 -}
-let Alpha = ../Unit/alpha-value.dhall
+let Alpha =
+        ../Unit/alpha-value.dhall sha256:bf08e9d80ceeee18606810ae82abff7266d1bb935d91cc9ea615f2490f3f60e5
+      ? ../Unit/alpha-value.dhall
 
-let CMYKComponent = ../Unit/cmyk-component.dhall
+let CMYKComponent =
+        ../Unit/cmyk-component.dhall sha256:832c70099e4253db67d42166a110e2cd41057df2071c248f6ae621b698e8c9c1
+      ? ../Unit/cmyk-component.dhall
 
-let Alphatize = ../Utils/Alphatize.dhall
+let Alphatize =
+        ../Utils/Alphatize.dhall sha256:0bad82995850661aa0d3c0f21cba23bcce78728f6326345bccf5afe8150951b2
+      ? ../Utils/Alphatize.dhall
 
 let DeviceCMYK
     : Type
@@ -85,4 +91,11 @@ let example1 =
             )
         ≡ "device-cmyk(0.1 0.2 0.4 0.8 1.0)"
 
-in  { Type = DeviceCMYK, Alpha, CMYKComponent, show, show4, device-cmyk, device-cmyka }
+in  { Type = DeviceCMYK
+    , Alpha
+    , CMYKComponent
+    , show
+    , show4
+    , device-cmyk
+    , device-cmyka
+    }

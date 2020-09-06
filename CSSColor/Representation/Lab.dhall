@@ -3,11 +3,17 @@
 {-
   https://www.w3.org/TR/css-color-4/#lab-colors
 -}
-let Alpha = ../Unit/alpha-value.dhall
+let Alpha =
+        ../Unit/alpha-value.dhall sha256:bf08e9d80ceeee18606810ae82abff7266d1bb935d91cc9ea615f2490f3f60e5
+      ? ../Unit/alpha-value.dhall
 
-let Percentage = ../Unit/percentage.dhall
+let Percentage =
+        ../Unit/percentage.dhall sha256:8ea5e1742af03a480c62dc10f6cfc8a81b69dace467857ab0865c869f070f7ef
+      ? ../Unit/percentage.dhall
 
-let Alphatize = ../Utils/Alphatize.dhall
+let Alphatize =
+        ../Utils/Alphatize.dhall sha256:0bad82995850661aa0d3c0f21cba23bcce78728f6326345bccf5afe8150951b2
+      ? ../Utils/Alphatize.dhall
 
 let Lab
     : Type

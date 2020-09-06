@@ -9,7 +9,9 @@
   (* 0.01) or (/ 100) away, arithmetic cannot be performed on Doubles at this time
   https://www.w3.org/TR/css-color-3/#alphavaluedt
 -}
-let Percentage = ./percentage.dhall
+let Percentage =
+        ./percentage.dhall sha256:8ea5e1742af03a480c62dc10f6cfc8a81b69dace467857ab0865c869f070f7ef
+      ? ./percentage.dhall
 
 let AlphaValue3
     : Type

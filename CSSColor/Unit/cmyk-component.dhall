@@ -3,7 +3,9 @@
 {-
   https://www.w3.org/TR/css-color-4/#typedef-cmyk-component
 -}
-let Percentage = ./percentage.dhall
+let Percentage =
+        ./percentage.dhall sha256:8ea5e1742af03a480c62dc10f6cfc8a81b69dace467857ab0865c869f070f7ef
+      ? ./percentage.dhall
 
 let CMYKComponent = < Number : Double | Percentage : Percentage.Type >
 

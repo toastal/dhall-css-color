@@ -5,7 +5,7 @@ stages:
 
 test:build:
   stage: test
-  script: dhall --explain --file ./CSSColor/Color.dhall
+  script: dhall --explain --file ./CSSColor/Color.dhall > /dev/null && echo "Build success!" && dhall --explain --file ./test/readme-test.dhall
 
 test:license-banner:
   stage: test

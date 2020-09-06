@@ -3,7 +3,9 @@
 {-
   https://www.w3.org/TR/css-color-4/#typedef-hue
 -}
-let Angle = ./angle.dhall
+let Angle =
+        ./angle.dhall sha256:b46f2f31c6a1131e80db30fe2bf1a661309d256e4c3547251298b153c52a020b
+      ? ./angle.dhall
 
 let Hue = < Number : Double | Angle : Angle.Type >
 

@@ -24,19 +24,19 @@
 
 
 let Natural/equal =
-      https://prelude.dhall-lang.org/v17.1.0/Natural/equal.dhall sha256:7f108edfa35ddc7cebafb24dc073478e93a802e13b5bc3fd22f4768c9b066e60
+      https://prelude.dhall-lang.org/v18.0.0/Natural/equal.dhall sha256:7f108edfa35ddc7cebafb24dc073478e93a802e13b5bc3fd22f4768c9b066e60
 
 let List/map =
-      https://prelude.dhall-lang.org/v17.1.0/List/map.dhall sha256:dd845ffb4568d40327f2a817eb42d1c6138b929ca758d50bc33112ef3c885680
+      https://prelude.dhall-lang.org/v18.0.0/List/map.dhall sha256:dd845ffb4568d40327f2a817eb42d1c6138b929ca758d50bc33112ef3c885680
 
 let List/unpackOptionals =
-      https://prelude.dhall-lang.org/v17.1.0/List/unpackOptionals.dhall sha256:0cbaa920f429cf7fc3907f8a9143203fe948883913560e6e1043223e6b3d05e4
+      https://prelude.dhall-lang.org/v18.0.0/List/unpackOptionals.dhall sha256:0cbaa920f429cf7fc3907f8a9143203fe948883913560e6e1043223e6b3d05e4
 
 let Text/concat =
-      https://prelude.dhall-lang.org/v17.1.0/Text/concat.dhall sha256:731265b0288e8a905ecff95c97333ee2db614c39d69f1514cb8eed9259745fc0
+      https://prelude.dhall-lang.org/v18.0.0/Text/concat.dhall sha256:731265b0288e8a905ecff95c97333ee2db614c39d69f1514cb8eed9259745fc0
 
 let Text/concatMap =
-      https://prelude.dhall-lang.org/v17.1.0/Text/concatMap.dhall sha256:7a0b0b99643de69d6f94ba49441cd0fa0507cbdfa8ace0295f16097af37e226f
+      https://prelude.dhall-lang.org/v18.0.0/Text/concatMap.dhall sha256:7a0b0b99643de69d6f94ba49441cd0fa0507cbdfa8ace0295f16097af37e226f
 
 let Hex
     : Type

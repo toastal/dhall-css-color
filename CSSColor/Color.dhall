@@ -2,45 +2,74 @@
 -- Copyright © 2020 toastal dhall-css-color
 {-
   https://drafts.csswg.org/css-color/#color-type
-
-  | Color
-
--- how to compose these inner color helpers?
-let compose = https://prelude.dhall-lang.org/v17.1.0/Function/compose.dhall
 -}
-let Alpha = ./Unit/alpha-value.dhall
+let Alpha =
+        ./Unit/alpha-value.dhall sha256:bf08e9d80ceeee18606810ae82abff7266d1bb935d91cc9ea615f2490f3f60e5
+      ? ./Unit/alpha-value.dhall
 
-let Angle = ./Unit/angle.dhall
+let Angle =
+        ./Unit/angle.dhall sha256:b46f2f31c6a1131e80db30fe2bf1a661309d256e4c3547251298b153c52a020b
+      ? ./Unit/angle.dhall
 
-let CMYKComponent = ./Unit/cmyk-component.dhall
+let CMYKComponent =
+        ./Unit/cmyk-component.dhall sha256:832c70099e4253db67d42166a110e2cd41057df2071c248f6ae621b698e8c9c1
+      ? ./Unit/cmyk-component.dhall
 
-let Hue = ./Unit/hue.dhall
+let Hue =
+        ./Unit/hue.dhall sha256:1ab4e52f18240db750d9c007dac232bbe5ec500fd8b2661c9d831f052b9846e2
+      ? ./Unit/hue.dhall
 
-let Percentage = ./Unit/percentage.dhall
+let Percentage =
+        ./Unit/percentage.dhall sha256:8ea5e1742af03a480c62dc10f6cfc8a81b69dace467857ab0865c869f070f7ef
+      ? ./Unit/percentage.dhall
 
-let Hex = ./Representation/Hex.dhall
+let Hex =
+        ./Representation/Hex.dhall sha256:fea01f0cb3640460dca01aef30c02a5d6946664b98682161ba8582d61d63b5b8
+      ? ./Representation/Hex.dhall
 
-let Named = ./Representation/Named.dhall
+let Named =
+        ./Representation/Named.dhall sha256:9cc313e6eab29fc442877509bac7f1f5c2fe55ed5b3db9785e298a1f56518abe
+      ? ./Representation/Named.dhall
 
-let System = ./Representation/System.dhall
+let System =
+        ./Representation/System.dhall sha256:8e416f4e5e308a53933bd46477402c8eceefaf0b1f5eec941ee55b8416972de9
+      ? ./Representation/System.dhall
 
-let CurrentColor = ./Representation/currentColor.dhall
+let CurrentColor =
+        ./Representation/currentColor.dhall sha256:74f391589727423d28fe4e0dbeeef1824e44a0a0561ef65b8d5545eec6f61249
+      ? ./Representation/currentColor.dhall
 
-let Transparent = ./Representation/transparent.dhall
+let Transparent =
+        ./Representation/transparent.dhall sha256:7cac16138449e6d9373a02c2293ea2769bc636454f06df99af650596a230d22f
+      ? ./Representation/transparent.dhall
 
-let RGB = ./Representation/RGB.dhall
+let RGB =
+        ./Representation/RGB.dhall sha256:6052262318aebe8a2c4856b88e6ef6e3665f5534faa962159ac77acb6dd53746
+      ? ./Representation/RGB.dhall
 
-let HSL = ./Representation/HSL.dhall
+let HSL =
+        ./Representation/HSL.dhall sha256:2df0a944aeaa87fbed5974d9f76070dc29ed9448964a15eb94187d0a68da8077
+      ? ./Representation/HSL.dhall
 
-let HWB = ./Representation/HWB.dhall
+let HWB =
+        ./Representation/HWB.dhall sha256:a823ec2b3bb2b0194445cffdd6807d6c8ed7e4da286351a5b2bf1d192e049924
+      ? ./Representation/HWB.dhall
 
-let Lab = ./Representation/Lab.dhall
+let Lab =
+        ./Representation/Lab.dhall sha256:6a2111e43aeaeebf7c50d02103e0af9b2b213138543195e5cfb4d8a689efad5b
+      ? ./Representation/Lab.dhall
 
-let LCH = ./Representation/LCH.dhall
+let LCH =
+        ./Representation/LCH.dhall sha256:f0d59b841df0086dc458d22a990e3682a66df4c817a326be2210e2e86822dc36
+      ? ./Representation/LCH.dhall
 
-let Gray = ./Representation/Gray.dhall
+let Gray =
+        ./Representation/Gray.dhall sha256:b676b4bb49c1715d5a3f298ce1b93bb91aa6582dba5b5c08b1fe96fa494cdbf9
+      ? ./Representation/Gray.dhall
 
-let DeviceCMYK = ./Representation/DeviceCMYK.dhall
+let DeviceCMYK =
+        ./Representation/DeviceCMYK.dhall sha256:459f578ffb4fddf86c1c4fe8eda40cee1fcbd6ed2a980cc932390da313f77e91
+      ? ./Representation/DeviceCMYK.dhall
 
 let Color3
     : Type
@@ -126,6 +155,14 @@ let hexa
       λ(blue : Natural) →
       λ(alpha : Natural) →
         Color.Hex (Hex.hexa red green blue alpha)
+
+let named
+    : Named.Type → Color
+    = λ(name : Named.Type) → Color.Named name
+
+let system
+    : System.Type → Color
+    = λ(sys : System.Type) → Color.System sys
 
 let currentColor
     : Color
@@ -261,7 +298,9 @@ in  { Type = Color
     , hex
     , hexa
     , Named
+    , named
     , System
+    , system
     , currentColor
     , transparent
     , RGB
