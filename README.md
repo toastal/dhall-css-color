@@ -9,7 +9,7 @@ This project is available on [GitLab](https://gitlab.com/toastal/dhall-css-color
 ```dhall
 -- Pick a tag/commit hash! Freeze it too!
 let Color =
-      https://gitlab.com/toastal/dhall-css-color/trunk/CSSColor/Color.dhall ? sha256:…
+      https://gitlab.com/toastal/dhall-css-color/raw/trunk/CSSColor/Color.dhall ? sha256:…
 
 let colors
     : List Color.Type
