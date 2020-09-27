@@ -69,10 +69,9 @@ in  colorsAsText : List Text
 
 ## TODO
 
-- `RGB` can take percentages according to the spec (although this will have tradeoffs)
 - [Profiled, device-dependent color that can be defined in arbitrary color spaces](https://www.w3.org/TR/css-color-4/#icc-colors)
 - Wait for a solution for the `Hex` mess
-- Conversions between representations (currently, I think only `Hex` to `RGB` will be possible)
+- Conversions between representations (currently, I think only `Hex` to `RGB` will be possible due to `Double` not being mathable)
 
 - - -
 
