@@ -3,7 +3,9 @@
 {-
   https://www.w3.org/TR/css3-values/#angle-value
 -}
-let Angle = < deg : Double | grad : Double | rad : Double | turn : Double >
+let Angle
+    : Type
+    = < deg : Double | grad : Double | rad : Double | turn : Double >
 
 let show
     : Angle → Text

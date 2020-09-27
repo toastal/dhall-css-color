@@ -44,7 +44,7 @@ let Transparent =
       ? ./Representation/transparent.dhall
 
 let RGB =
-        ./Representation/RGB.dhall sha256:6052262318aebe8a2c4856b88e6ef6e3665f5534faa962159ac77acb6dd53746
+        ./Representation/RGB.dhall sha256:6f0a6cb4c0e074da58525aa13cd983ce2471f3557fcce1372d5c331655309433
       ? ./Representation/RGB.dhall
 
 let HSL =
@@ -77,7 +77,7 @@ let Color3
       | Named : Named.Type
       | currentColor : CurrentColor.Type
       | transparent : Transparent.Type
-      | RGB : RGB.Type
+      | RGB : RGB.RGB3
       | HSL : HSL.Type
       >
 
@@ -186,6 +186,21 @@ let rgba
       λ(blue : Double) →
       λ(alpha : Alpha.Type) →
         Color.RGB (RGB.rgba red green blue alpha)
+
+let rgbp
+    : Percentage.Type → Percentage.Type → Percentage.Type → Color
+    = λ(red : Percentage.Type) →
+      λ(green : Percentage.Type) →
+      λ(blue : Percentage.Type) →
+        Color.RGB (RGB.rgbp red green blue)
+
+let rgbpa
+    : Percentage.Type → Percentage.Type → Percentage.Type → Alpha.Type → Color
+    = λ(red : Percentage.Type) →
+      λ(green : Percentage.Type) →
+      λ(blue : Percentage.Type) →
+      λ(alpha : Alpha.Type) →
+        Color.RGB (RGB.rgbpa red green blue alpha)
 
 let hsl
     : Hue.Type → Percentage.Type → Percentage.Type → Color
@@ -306,6 +321,8 @@ in  { Type = Color
     , RGB
     , rgb
     , rgba
+    , rgbp
+    , rgbpa
     , HSL
     , hsl
     , hsla
