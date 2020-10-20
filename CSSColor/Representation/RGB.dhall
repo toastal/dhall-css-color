@@ -5,10 +5,10 @@
   Using the legacy comma syntax in the `show` for better compatibility
 -}
 let compose =
-      https://prelude.dhall-lang.org/v18.0.0/Function/compose.dhall sha256:65ad8bbea530b3d8968785a7cf4a9a7976b67059aa15e3b61fcba600a40ae013
+      https://prelude.dhall-lang.org/v19.0.0/Function/compose.dhall sha256:65ad8bbea530b3d8968785a7cf4a9a7976b67059aa15e3b61fcba600a40ae013
 
 let Optional/map =
-      https://prelude.dhall-lang.org/v18.0.0/Optional/map.dhall sha256:501534192d988218d43261c299cc1d1e0b13d25df388937add784778ab0054fa
+      https://prelude.dhall-lang.org/v19.0.0/Optional/map.dhall sha256:501534192d988218d43261c299cc1d1e0b13d25df388937add784778ab0054fa
 
 let Alpha =
         ../Unit/alpha-value.dhall sha256:bf08e9d80ceeee18606810ae82abff7266d1bb935d91cc9ea615f2490f3f60e5
